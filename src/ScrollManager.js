@@ -56,10 +56,7 @@ class ScrollManager extends React.Component {
     const { renderArgs } = this.props;
     const prevLocation = this.prevRenderArgs && this.prevRenderArgs.location;
 
-    if (
-      renderArgs.location === prevLocation ||
-      !(renderArgs.elements || renderArgs.error)
-    ) {
+    if (renderArgs.location === prevLocation || !renderArgs.error) {
       // If the location hasn't actually changed, or if we're in a global
       // pending state, don't update the scroll position.
       return;
